@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-export default async function connect() {
+export async function connect() {
   try {
     mongoose.connect(process.env.MONGODB_URL!);
 
@@ -12,7 +12,6 @@ export default async function connect() {
     connection.on("error", (err) => {
       console.log("connection error, make sure connection is running" + err);
     });
-    process.exit();
   } catch (error) {
     console.log("something went wrong!");
     console.log(error);
