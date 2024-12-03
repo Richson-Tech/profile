@@ -12,7 +12,7 @@ export default function Login() {
     password: "",
   });
   const [buttondisabled, setButtonDisabled] = React.useState(false);
-  const [Loading, setLoading] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
 
   const onLogin = async () => {
     try {
@@ -39,7 +39,7 @@ export default function Login() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 text-white">
-      <h1 className="mb-4">Login</h1>
+      <h1 className="mb-4">{ loading ? "Processing" : "Login"}</h1>
       <hr />
       <label htmlFor="userName">email</label>
       <input
