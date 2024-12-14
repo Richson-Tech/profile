@@ -94,7 +94,10 @@ export default function Login() {
       toast.success("Login Success");
       router.push("/profile");
     } catch (error: any) {
-      console.error("login failed", error.response?.data?.error || error.message);
+      console.error(
+        "login failed",
+        error.response?.data?.error || error.message
+      );
       toast.error(error.response?.data?.error || "Something went wrong");
     } finally {
       setLoading(false);
@@ -134,7 +137,7 @@ export default function Login() {
           buttondisabled || loading ? "bg-gray-400 cursor-not-allowed" : ""
         }`}
       >
-        {loading ? "Processing..." : "Login Here"}
+        {loading ? "Loading..." : "Login Here"}
       </button>
       <Link href="/signup">Visit Signup Page</Link>
     </div>
