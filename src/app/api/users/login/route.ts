@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
       }
 
       //   create token 
-    const token = await jwt.sign(tokenData, process.env.SECRET_TOKEN, { expiresIn: "1d" })
+    const token = await jwt.sign(tokenData, process.env.SECRET_TOKEN!, { expiresIn: "1d" })
     const response = NextResponse.json({
       message: "Login successful",
       success:true,
@@ -38,8 +38,9 @@ export async function POST(request: NextRequest) {
       httpOnly:true,
     })
     return response;
-    
+
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
+
