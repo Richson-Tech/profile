@@ -1,4 +1,3 @@
-
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
@@ -26,7 +25,9 @@ export default function SignUp() {
       router.push("/login");
     } catch (error: any) {
       console.log("Signup failed", error.response?.data || error.message);
-      toast.error(error.response?.data.error || "An error occurred during signup.");
+      toast.error(
+        error.response?.data.error || "An error occurred during signup."
+      );
     } finally {
       setLoading(false);
     }
@@ -38,9 +39,11 @@ export default function SignUp() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 text-white">
-      <h1 className="mb-4 text-4xl font-semibold">{loading ? "Loading..." : "Sign Up"}</h1>
+      <h1 className="mb-4 text-4xl font-semibold">
+        {loading ? "Signing up..." : "Sign Up"}
+      </h1>
       <hr />
-      
+
       <label htmlFor="username">Username</label>
       <input
         className="p-2 text-black border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600"
@@ -78,7 +81,7 @@ export default function SignUp() {
       >
         {loading ? "Signing Up..." : buttonDisable ? "No Sign Up" : "Sign Up"}
       </button>
-      
+
       <Link href="/login">Visit Login Page</Link>
     </div>
   );
