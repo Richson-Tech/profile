@@ -82,7 +82,7 @@ export default function SignUp() {
         {loading ? "Signing Up..." : buttonDisable ? "No Sign Up" : "Sign Up"}
       </button>
 
-      <Link href="/login">Visit Login Page</Link>
+      <Link href="/login">Login Page</Link>
     </div>
   );
 }
